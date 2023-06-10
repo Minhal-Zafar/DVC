@@ -1,0 +1,9 @@
+[core]
+    remote = dvcremote
+['remote "dvcremote"']
+    url = gdrive://1Diui_zfFplG4Ugo1JGzJjBmALdYnV-GP
+    gdrive_client_id = "'826225077508-s3g352ao2ca3epd5rka4s9poi2tskkdf.apps.googleusercontent.com'"
+    gdrive_client_secret = "'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'"
+    gdrive_use_service_account = true
+    gdrive_service_account_user_email = "'dvc-account@dvc-remote-386207.iam.gserviceaccount.com'"
+    gdrive_service_account_json_file_path = "dvc-remote-386207-9fb83cae439c.json"
