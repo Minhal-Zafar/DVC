@@ -1,0 +1,17 @@
+name: DVC Tracking with Github Actions
+on: [push]
+jobs:
+  run:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update
+        run: |
+          make install 
+          dvc pull
+          dvc repro
+          git fetch --prune
+          dvc metrics diff --show-md
+          dvc metrics diff --show-md main > report.md
+          gh pr comment ${{github.event.pull_request.number}} -F report.md
