@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: dvc pull
+  train_data:
+    cmd: python train.py
+    deps:
+    - path: creditcard.csv
+      md5: e90efcb83d69faf99fcab8b0255024de
+      size: 150828752
+    outs:
+    - path: metrics.json
+      md5: b2cdce217ddbbb57c4f18d0125166ed2
+      size: 32

@@ -1,0 +1,10 @@
+stages:
+  test:
+    cmd: echo "Hello jsut a test command"
+  train_data:
+    cmd: python train.py
+    deps:
+    - creditcard.csv
+    metrics:
+    - metrics.json:
+        cache: false
